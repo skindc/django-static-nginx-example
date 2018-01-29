@@ -15,20 +15,23 @@ Please feel free to clone the project to see the article files in operation or t
 git clone https://github.com/skindc/django-static-nginx-example.git
 ```
 
-Once cloned you will need checkout out the first of two tags for this article project.
+Once cloned you will have the choice of checking out one of two branches for this articles project.
 
 The complete Docker Compose setup but without SSL.
 
-```git checkout tags/compose-with-no-ssl```
+```git checkout compose-without-ssl```
 
-The second tag can be checked out to see the same project but with Nginx using SSL certificates to serve HTTPS.
+or
 
-2. The project at stage one with additional SSL setup with Nginx.
-   ```git checkout tags/compose-with-ssl```
+The complete Docker Compose setup but with SSL.
+
+```git checkout compose-with-ssl```
+
+For this second branch the certificates are not included, please follow the later part of article to apply you own certificates.
 
 ### The Docker Machine
 
-Each tag comprises of everything you need to deploy the Docker Compose services to the Docker Machine of your choice, yet you will need to create the docker machines to deploy to.
+Each brach comprises of everything you need to deploy the Docker Compose services to the Docker Machine of your choice, yet you will need to create the docker machines to deploy to.
 
 Although the article does not go into depth about Docker, Docker Compose, and Docker Machine there is some guidance in the article about creating a Virtual Box Docker Machine in your local development environment.
 
