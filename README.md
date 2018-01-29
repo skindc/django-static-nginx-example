@@ -15,20 +15,29 @@ Please feel free to clone the project to see the article files in operation or t
 git clone https://github.com/skindc/django-static-nginx-example.git
 ```
 
-Once clone there are two tagged stages to this project.
+Once cloned you will need checkout out the first of two tags for this article project.
 
-1. The complete Docker Compose setup but without SSL.
-   ```git checkout tags/compose-with-no-ssl```
+The complete Docker Compose setup but without SSL.
+
+```git checkout tags/compose-with-no-ssl```
+
+The second tag can be checked out to see the same project but with Nginx using SSL certificates to serve HTTPS.
 
 2. The project at stage one with additional SSL setup with Nginx.
    ```git checkout tags/compose-with-ssl```
+
+### The Docker Machine
+
+Each tag comprises of everything you need to deploy the Docker Compose services to the Docker Machine of your choice, yet you will need to create the docker machines to deploy to.
+
+Although the article does not go into depth about Docker, Docker Compose, and Docker Machine there is some guidance in the article about creating a Virtual Box Docker Machine in your local development environment.
 
 ## Prequisites
 
 From some of the terms used above you have already guessed that you will need some previous knowledge on these subjects to follow this article.
 
-* Knowledge of [Docker](https://www.docker.com/what-docker) and [Docker Compose](https://docs.docker.com/compose/) concepts.
-*  [Docker](https://www.docker.com/what-docker), [Docker Compose](https://docs.docker.com/compose/) and [Docker Machine](https://docs.docker.com/machine/) installed and operational
+* Knowledge of [Docker](https://www.docker.com/what-docker), [Docker Compose](https://docs.docker.com/compose/) and [Docker Machine](https://docs.docker.com/machine/) concepts and usage.
+* [Docker](https://www.docker.com/what-docker), [Docker Compose](https://docs.docker.com/compose/) and [Docker Machine](https://docs.docker.com/machine/) installed and operational
 * Knowledge of [Nginx](https://www.nginx.com/) and its use as a webserver and proxy.
 * Knowledge of the [Python](https://www.python.org/) and the Pip installer.
 * Knowledge of Django project.
