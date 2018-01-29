@@ -1,0 +1,34 @@
+version: '2'
+services:
+
+  django:
+    container_name: dsne-django
+    build:
+      context: .
+    networks:
+      - dsne-django-nginx
+    volumes:
+      - dsne-django-static:/usr/src/app/static
+    ports:
+      - 8000:8000
+
+  nginx:
+    container_name: dsne-nginx
+    build:
+      context: ./nginx
+      dockerfile: nginx.dockerfile
+    networks:
+      - dsne-django-nginx
+    volumes:
+      - dsne-django-static:/usr/src/app/static
+    ports:
+      - 80:80
+    depends_on:
+      - django
+
+volumes:
+  dsne-django-static:
+
+networks:
+  dsne-django-nginx:
+    driver: bridge
