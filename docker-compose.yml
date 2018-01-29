@@ -21,13 +21,16 @@ services:
       - dsne-django-nginx
     volumes:
       - dsne-django-static:/usr/src/app/static
+      - dsne-nginx-cert:/etc/ssl/certs:ro
     ports:
       - 80:80
+      - 443:443
     depends_on:
       - django
 
 volumes:
   dsne-django-static:
+  dsne-nginx-cert:
 
 networks:
   dsne-django-nginx:
