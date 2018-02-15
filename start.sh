@@ -11,6 +11,18 @@
 # You can read more on configuration of Gunicorn in their documentation.
 # 
 echo Starting Gunicorn.
+
+#make sure we are at project root /usr/src/app
+cd $PROJECT_ROOT
+
+if [ ! -f $PROJECT_ROOT/.build ]; then
+  echo "Collecting and compiling statics"
+  pushd helloworld
+  python manage.py collectstatic --noinput
+  popd
+  date > $PROJECT_ROOT/.build
+fi
+
 # Difference from article
 # CD to project as per comment above
 cd helloworld

@@ -6,8 +6,7 @@
 
 FROM python:3.6.4-onbuild
 
-#Change into our python project directory, collectstatic files and retrn to root or project
-RUN cd helloworld && python manage.py collectstatic && cd ../
+ENV PROJECT_ROOT /usr/src/app
 
 COPY start.sh /start.sh
 
@@ -15,5 +14,5 @@ COPY start.sh /start.sh
 EXPOSE 8000
 
 # CMD specifcies the command to execute to start the server running.
-CMD ["/start.sh"]
+CMD ["/start.sh", "-docker"]
 # done!
